@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Text Analyzer",
+  "version": "1.0.0",
+  "description": "Analyze selected text using Chrome's AI Language Model",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "aiLanguageModelOriginTrial"
+  ],
+  "trial_tokens": ["Aozzz6KfHYqh8q5x+Khse27nSp8YM7Tftv6XZhNO7lgYcP5uQxxBEpMfRhiFbYJV+yJl1fDNzvtao7FswtZGIgQAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vYWhpaWZrb2RnbWlmcGNnbmRja3BwaW1lY25wa3BkbGwiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "content/ui.js",
+      "content/response-manager.js"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+}
