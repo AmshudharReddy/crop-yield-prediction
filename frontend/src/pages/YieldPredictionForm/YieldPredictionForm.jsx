@@ -483,6 +483,21 @@ const YieldPredictionForm = () => {
             Crop_Year: parseInt(formData.Crop_Year, 10),
             predicted_yield: 0  // Default value, should be calculated by your ML model
         };
+        // const response = await fetch("http://localhost:3000/api/predict-yield", {
+          //         method: "POST",
+          //         headers: { "Content-Type": "application/json" },
+          //         body: JSON.stringify(payload),
+          //       });
+          
+          //       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                
+          //       const result = await response.json();
+          //       alert(`Predicted Yield: ${result.predicted_yield.toFixed(2)} kg/ha`);
+          //     } catch (error) {
+          //       console.error("Submission error:", error);
+          //       alert("Failed to get prediction. Check inputs and try again.");
+          //     }
+          //   };
 
         const response = await fetch("http://localhost:5000/api/yield/save-prediction", {
             method: "POST",
@@ -496,7 +511,7 @@ const YieldPredictionForm = () => {
         }
 
         const result = await response.json();
-        alert(`Prediction saved successfully!`);
+        alert(`Prediction saved successfully${result.predicted_yield} !`);
         setShowForm(false);
     } catch (error) {
         console.error("Submission error:", error);
