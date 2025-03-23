@@ -16,9 +16,6 @@ const HistoryRoutes = require("./routes/HistoryRoutes");
 const postRoutes = require("./routes/postRoutes");
 const notificationRoutes = require("./routes/NotificationRoutes");
 const SolveRoutes = require('./routes/SolveRoutes');
-
-const YieldRoutes = require('./routes/YieldRoutes');
-
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -76,9 +73,6 @@ app.use("/api/history", HistoryRoutes);
 app.use("/posts", postRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use('/api/solve', SolveRoutes);
-// Add near other route imports
-app.use("/api/yield", YieldRoutes);
-// Add after other route middlewares
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

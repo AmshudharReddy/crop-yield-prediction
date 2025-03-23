@@ -14,7 +14,7 @@ import cross_light from "./cross/light.svg";
 import lightmode from "./modes/lightmode.svg";
 import darkmode from "./modes/darkmode2.svg";
 import "./NavBar.css";
-import YieldPredictionForm from "../YieldPredictionForm/YieldPredictionForm"; // Import Form
+
 export default function NavBar() {
   const { isDarkMode, setDarkMode } = useDarkMode();
   const [username, setUsername] = useState(
@@ -153,9 +153,8 @@ export default function NavBar() {
                   <Link to="/history">History</Link>
                 </li>
                 <li>
-  <Link to="/yield-prediction">Yield Prediction</Link>
-</li>
-
+                  <Link to="/blogs">Blogs</Link>
+                </li>
                 <li>
                   <Link to="/insights">Insights</Link>
                 </li>

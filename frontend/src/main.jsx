@@ -24,7 +24,7 @@ import Faq from './pages/faq_feedback/Faq.jsx';
 import { DarkModeProvider } from "./DarkModeContext.jsx";
 import Layout from "./Layout.jsx";
 import "./globals.css";
-import YieldPredictionForm from "./pages/YieldPredictionForm/YieldPredictionForm"; // Import Form
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -157,16 +157,6 @@ const router = createBrowserRouter([
     ),
     children: [{ path: "", element: <Solve /> }],
   },
-  {
-    path: "/yield-prediction",
-    element: (
-      <ProtectedRoute requiredUserType="normal">
-        <Layout />
-      </ProtectedRoute>
-    ),
-    children: [{ path: "", element: <YieldPredictionForm /> }],
-  },
-  
 ]);
 
 createRoot(document.getElementById("root")).render(
